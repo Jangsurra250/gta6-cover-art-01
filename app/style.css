@@ -1,12 +1,31 @@
-html, body { margin: 0; height: 100%; background: #f2f0f4; color: #1d1b22; font: 15px/1.4 system-ui, sans-serif; }
-.app { display: flex; gap: 32px; align-items: center; justify-content: center; height: 100%; padding: 24px; box-sizing: border-box; }
-.controls { display: flex; flex-direction: column; gap: 14px; width: 280px; }
-.controls h1 { margin: 0; font-size: 28px; }
-.controls p { margin: 0; color: #5c5866; }
-label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
-input[type=text] { font: inherit; padding: 8px; border: 1px solid #c9c4d1; border-radius: 6px; }
-button { font: inherit; font-weight: 700; padding: 10px; border: 0; border-radius: 6px; background: #1d1b22; color: #fff; cursor: pointer; }
-canvas { width: min(70vh, 60vw); height: min(70vh, 60vw); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); }
+/* Vice City Cover Maker — sunset-night editor chrome. */
+html, body { margin: 0; min-height: 100%; background: #17101f; color: #f5eef7; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 14px; width: 320px; flex: none; }
+.controls h1 { margin: 0; font-size: 34px; line-height: 1.02; font-weight: 900; letter-spacing: -0.5px;
+  background: linear-gradient(180deg, #ffe66d, #ff5e7a 70%, #b565d8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tag { margin: 0; color: #cdbfd6; }
+fieldset { border: 1px solid #3d2b4d; border-radius: 10px; padding: 12px; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+legend { font-weight: 800; font-size: 13px; letter-spacing: 0.4px; color: #ffb3c8; padding: 0 6px; }
+label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px; }
+label.check { flex-direction: row; align-items: center; gap: 8px; font-weight: 500; }
+input[type=text], select { font: inherit; padding: 8px; border: 1px solid #4a365e; border-radius: 6px; background: #241a30; color: #f5eef7; }
+input[type=file] { font: inherit; color: #cdbfd6; }
+input[type=range] { accent-color: #ff5e7a; }
+.row { display: flex; gap: 8px; }
+.row button { flex: 1; }
+button { font: inherit; font-weight: 700; padding: 9px 10px; border: 1px solid #4a365e; border-radius: 6px; background: #2b1d3a; color: #f5eef7; cursor: pointer; }
+button:hover { border-color: #ff5e7a; }
+button.primary { background: linear-gradient(90deg, #ff5e7a, #ff9a3d); border: 0; color: #1d0b26; font-size: 16px; padding: 12px; }
+.seg { display: flex; gap: 6px; }
+.seg button { flex: 1; padding: 8px 4px; font-size: 13px; }
+.seg button.on { background: #ff5e7a; border-color: #ff5e7a; color: #1d0b26; }
+.note, #status { margin: 0; color: #cdbfd6; font-size: 13px; min-height: 1.2em; }
+.fine { margin: 0; color: #8d7d9b; font-size: 12px; }
+.preview { position: sticky; top: 24px; }
+canvas { display: block; width: min(72vh, 58vw); height: auto; background: #fff6ec; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); border-radius: 4px; }
+/* Screenshot scenes: the cover alone fills the frame, controls hidden. */
 body.shot-cover .controls { display: none; }
-body.shot-cover .app { padding: 0; }
-body.shot-cover canvas { width: 100vw; height: 100vh; box-shadow: none; }
+body.shot-cover .app { padding: 0; display: block; }
+body.shot-cover .preview { position: static; }
+body.shot-cover canvas { width: 100vw; height: 100vh; object-fit: contain; box-shadow: none; border-radius: 0; background: #fff6ec; }
